@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 
-export class Header extends Component {
+class Header extends Component {
   state = {
     total: 0,
   };
