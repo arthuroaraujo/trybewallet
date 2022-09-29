@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import propTypes from 'prop-types';
+import { fetchApi } from '../redux/actions';
 
 class WalletForm extends Component {
   state = {
+    expenses: 0,
+    description: '',
     currency: 'USD',
     method: 'Dinheiro',
     categorie: 'Alimentação',
   };
+
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(fetchApi());
+  }
 
   handleChange = ({ target }) => {
     const { name, value } = target;
@@ -13,19 +23,25 @@ class WalletForm extends Component {
   };
 
   render() {
-    const { currency, method, categorie } = this.state;
+    const { expenses, description, currency, method, categorie } = this.state;
+    const { currencies } = this.props;
+    // console.log(currencies);
     return (
       <div>
         <form>
           <input
             data-testid="value-input"
             type="number"
-            name="despesas"
+            name="expenses"
+            value={ expenses }
+            onChange={ this.handleChange }
           />
           <input
             data-testid="description-input"
             type="string"
-            name="descrição"
+            name="description"
+            value={ description }
+            onChange={ this.handleChange }
           />
           <select
             data-testid="currency-input"
@@ -33,7 +49,13 @@ class WalletForm extends Component {
             value={ currency }
             onChange={ this.handleChange }
           >
-            Qual Moeda
+            {
+              Object.keys(currencies)
+                .filter((element) => element !== 'USDT')
+                .map((element, index) => (
+                  <option key={ index }>{element}</option>
+                ))
+            }
 
           </select>
           <select
@@ -64,4 +86,12 @@ class WalletForm extends Component {
   }
 }
 
-export default WalletForm;
+const mapStateToProps = (state) => ({
+  currencies: state.wallet.currency,
+});
+
+WalletForm.propTypes = {
+  dispatch: propTypes.func,
+}.isRequired;
+
+export default connect(mapStateToProps)(WalletForm);
