@@ -6,11 +6,17 @@ import { fetchApi } from '../redux/actions';
 class WalletForm extends Component {
   state = {
     expenses: 0,
+    // id: 0,
     description: '',
     currency: 'USD',
     method: 'Dinheiro',
     categorie: 'Alimentação',
   };
+
+  // handleClick = () => {
+  //   this.setState((prevState) => { prevState.id + 1; });
+  // dispatch(addExpenses(this.state));
+  // };
 
   componentDidMount() {
     const { dispatch } = this.props;
@@ -25,7 +31,7 @@ class WalletForm extends Component {
   render() {
     const { expenses, description, currency, method, categorie } = this.state;
     const { currencies } = this.props;
-    // console.log(currencies);
+    console.log(currencies);
     return (
       <div>
         <form>
@@ -50,10 +56,9 @@ class WalletForm extends Component {
             onChange={ this.handleChange }
           >
             {
-              Object.keys(currencies)
-                .filter((element) => element !== 'USDT')
+              currencies
                 .map((element, index) => (
-                  <option key={ index }>{element}</option>
+                  <option value={ element } key={ index }>{element}</option>
                 ))
             }
 
@@ -80,18 +85,27 @@ class WalletForm extends Component {
             <option value="transporte">Transporte</option>
             <option value="saude">Saúde</option>
           </select>
+          <button
+            type="button"
+            // onClick={ this.handleClick }
+          >
+            Adicionar despesa
+
+          </button>
         </form>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => ({
-  currencies: state.wallet.currency,
+const mapStateToProps = ({ wallet }) => ({
+  currencies: wallet.currencies,
+  expenses: wallet.expenses,
 });
 
 WalletForm.propTypes = {
-  dispatch: propTypes.func,
-}.isRequired;
+  dispatch: propTypes.func.isRequired,
+  currencies: propTypes.arrayOf(propTypes.string.isRequired).isRequired,
+};
 
 export default connect(mapStateToProps)(WalletForm);
