@@ -19,14 +19,12 @@ export const getExpenses = (payload) => ({
 });
 
 export const addExpenses = (expenses) => async (dispatch) => {
-  // dispatch(requestApi());
   const endpoint = await fetch('https://economia.awesomeapi.com.br/json/all');
   const data = await endpoint.json();
-  return dispatch(getExpenses({ ...expenses, exchangeRate: data }));
+  return dispatch(getExpenses({ ...expenses, exchangeRates: data }));
 };
 
 export const fetchApi = () => async (dispatch) => {
-  // dispatch(requestApi());
   const endpoint = await fetch('https://economia.awesomeapi.com.br/json/all');
   const data = await endpoint.json();
   return dispatch(responseApi(data));
