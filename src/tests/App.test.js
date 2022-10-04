@@ -54,44 +54,22 @@ describe('Testando a aplicação', () => {
     expect(pathname).toBe('/carteira');
   });
 
-  //   test('Testando a table', () => {
-  //     renderWithRouterAndRedux(<App />, { initialEntries: ['/carteira'] });
-  //     const descEl = screen.getByRole('columnheader', {
-  //       name: /descrição/i,
-  //     });
-  //     const tagEl = screen.getByRole('columnheader', {
-  //       name: /tag/i,
-  //     });
-  //     const paymentEl = screen.getByRole('columnheader', {
-  //       name: /método de pagamento/i,
-  //     });
-  //     // const valueEl = screen.getByRole('columnheader', {
-  //     //   name: /valor/i,
-  //     // });
-  //     // const coinEl = screen.getByRole('columnheader', {
-  //     //   name: /moeda/i,
-  //     // });
-  //     const exchEl = screen.getByRole('columnheader', {
-  //       name: /câmbio utilizado/i,
-  //     });
-  //     const convValEl = screen.getByRole('columnheader', {
-  //       name: /valor convertido/i,
-  //     });
-  //     const convCoinEl = screen.getByRole('columnheader', {
-  //       name: /moeda de conversão/i,
-  //     });
-  //     const editExcEl = screen.getByRole('columnheader', {
-  //       name: /editar\/excluir/i,
-  //     });
+  test('Testando a table', () => {
+    renderWithRouterAndRedux(<App />, { initialEntries: ['/carteira'] });
+    const valueEl = screen.getByTestId('email-field');
+    const descEl = screen.getByTestId('description-input');
+    const currEl = screen.getByTestId('currency-input');
+    const mathodEl = screen.getByTestId('method-input');
+    const tagEl = screen.getByTestId('tag-input');
+    // const buttonEl = screen.getByRole('button', {
+    //   name: /adicionar despesa/i,
+    // });
 
-//     expect(descEl).toBeInTheDocument();
-//     expect(tagEl).toBeInTheDocument();
-//     expect(paymentEl).toBeInTheDocument();
-//     // expect(valueEl).toBeInTheDocument();
-//     // expect(coinEl).toBeInTheDocument();
-//     expect(exchEl).toBeInTheDocument();
-//     expect(convValEl).toBeInTheDocument();
-//     expect(convCoinEl).toBeInTheDocument();
-//     expect(editExcEl).toBeInTheDocument();
-//   });
+    expect(valueEl).toBeInTheDocument();
+    expect(descEl).toBeInTheDocument();
+    expect(tagEl).toBeInTheDocument();
+    expect(currEl).toBeInTheDocument();
+    expect(mathodEl).toBeInTheDocument();
+    // expect(buttonEl).toBeInTheDocument();
+  });
 });

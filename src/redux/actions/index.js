@@ -2,6 +2,7 @@
 export const GET_EMAIL = 'GET_EMAIL';
 export const RESPONSE_API = 'RESPONSE_API';
 export const GET_EXPENSES = 'GET_EXPENSES';
+export const DELETE_EXPENSES = 'DELETE_EXPENSES';
 
 export const getEmail = (payload) => ({
   type: GET_EMAIL,
@@ -16,6 +17,11 @@ export const responseApi = (payload) => ({
 export const getExpenses = (payload) => ({
   type: GET_EXPENSES,
   payload,
+});
+
+export const deleteExpenses = (id) => ({
+  type: DELETE_EXPENSES,
+  id,
 });
 
 export const addExpenses = (expenses) => async (dispatch) => {
