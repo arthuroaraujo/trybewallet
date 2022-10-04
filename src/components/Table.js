@@ -22,19 +22,19 @@ class Table extends Component {
           </tr>
         </thead>
         <tbody>
-          {expenses.map((expense) => (
-            <tr key={ expense.id }>
-              <td>{ expense.description }</td>
-              <td>{ expense.tag }</td>
-              <td>{ expense.method }</td>
-              <td>{ Number(expense.value).toFixed(2) }</td>
-              <td>{ expense.exchangeRates[expense.currency].name }</td>
+          {expenses.map((element) => (
+            <tr key={ element.id }>
+              <td>{ element.description }</td>
+              <td>{ element.tag }</td>
+              <td>{ element.method }</td>
+              <td>{ Number(element.value).toFixed(2) }</td>
+              <td>{ element.exchangeRates[element.currency].name }</td>
               <td>
-                { Number(expense.exchangeRates[expense.currency].ask)
+                { Number(element.exchangeRates[element.currency].ask)
                   .toFixed(2)}
               </td>
               <td>
-                { Number((expense.exchangeRates[expense.currency].ask * expense.value)
+                { Number((element.exchangeRates[element.currency].ask * element.value)
                   .toFixed(2))}
               </td>
               <td>Real</td>
@@ -43,7 +43,7 @@ class Table extends Component {
                 <button
                   type="button"
                   data-testid="delete-btn"
-                  onClick={ () => dispatch(deleteExpenses(expense.id)) }
+                  onClick={ () => dispatch(deleteExpenses(element.id)) }
                 >
                   Excluir
 
