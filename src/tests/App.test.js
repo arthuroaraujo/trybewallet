@@ -14,7 +14,7 @@ describe('Testando a aplicação', () => {
     const buttonEl = screen.getByRole('button', {
       name: /entrar/i,
     });
-
+    expect(pathname).toBe('/');
     expect(emailInputEl).toBeInTheDocument();
     expect(passwordInputEl).toBeInTheDocument();
     expect(buttonEl).toBeInTheDocument();
@@ -27,7 +27,7 @@ describe('Testando a aplicação', () => {
 
     userEvent.click(buttonEl);
 
-    expect(pathname).toBe('/carteira');
+    expect(pathname).not.toBe('/carteira');
   });
 
   test('Testando a tela da carteira', () => {
@@ -53,4 +53,45 @@ describe('Testando a aplicação', () => {
 
     expect(pathname).toBe('/carteira');
   });
+
+  //   test('Testando a table', () => {
+  //     renderWithRouterAndRedux(<App />, { initialEntries: ['/carteira'] });
+  //     const descEl = screen.getByRole('columnheader', {
+  //       name: /descrição/i,
+  //     });
+  //     const tagEl = screen.getByRole('columnheader', {
+  //       name: /tag/i,
+  //     });
+  //     const paymentEl = screen.getByRole('columnheader', {
+  //       name: /método de pagamento/i,
+  //     });
+  //     // const valueEl = screen.getByRole('columnheader', {
+  //     //   name: /valor/i,
+  //     // });
+  //     // const coinEl = screen.getByRole('columnheader', {
+  //     //   name: /moeda/i,
+  //     // });
+  //     const exchEl = screen.getByRole('columnheader', {
+  //       name: /câmbio utilizado/i,
+  //     });
+  //     const convValEl = screen.getByRole('columnheader', {
+  //       name: /valor convertido/i,
+  //     });
+  //     const convCoinEl = screen.getByRole('columnheader', {
+  //       name: /moeda de conversão/i,
+  //     });
+  //     const editExcEl = screen.getByRole('columnheader', {
+  //       name: /editar\/excluir/i,
+  //     });
+
+//     expect(descEl).toBeInTheDocument();
+//     expect(tagEl).toBeInTheDocument();
+//     expect(paymentEl).toBeInTheDocument();
+//     // expect(valueEl).toBeInTheDocument();
+//     // expect(coinEl).toBeInTheDocument();
+//     expect(exchEl).toBeInTheDocument();
+//     expect(convValEl).toBeInTheDocument();
+//     expect(convCoinEl).toBeInTheDocument();
+//     expect(editExcEl).toBeInTheDocument();
+//   });
 });
