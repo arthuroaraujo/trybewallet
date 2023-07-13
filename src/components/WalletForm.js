@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import { addExpenses, fetchApi } from '../redux/actions';
-import '../styles/WalletForm.css'
+import '../styles/WalletForm.css';
 
 const INITIAL_STATE = {
   id: 0,
@@ -47,24 +47,24 @@ class WalletForm extends Component {
     return (
       <div className="WalletForm">
         <form onSubmit={ this.handleSubmit }>
-        <div className="input-container">
-        <label htmlFor="value">Preço:</label>
-          <input
-            data-testid="value-input"
-            type="number"
-            name="value"
-            value={ value }
-            onChange={ this.handleChange }
-          />
-          <label htmlFor="description">Descrição:</label>
-          <input
-            data-testid="description-input"
-            type="string"
-            name="description"
-            value={ description }
-            onChange={ this.handleChange }
-          />
-        </div>
+          <div className="input-container">
+            <label htmlFor="value">Preço:</label>
+            <input
+              data-testid="value-input"
+              type="number"
+              name="value"
+              value={ value }
+              onChange={ this.handleChange }
+            />
+            <label htmlFor="description">Descrição:</label>
+            <input
+              data-testid="description-input"
+              type="string"
+              name="description"
+              value={ description }
+              onChange={ this.handleChange }
+            />
+          </div>
           <select
             data-testid="currency-input"
             name="currency"
