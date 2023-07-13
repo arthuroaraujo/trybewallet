@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import { deleteExpenses } from '../redux/actions';
+import '../styles/Table.css';
 
 class Table extends Component {
   render() {
     const { expenses, dispatch } = this.props;
     return (
-      <table>
+      <table className="Table">
         <thead>
           <tr>
             <th>Descrição</th>
@@ -18,7 +19,7 @@ class Table extends Component {
             <th>Câmbio utilizado</th>
             <th>Valor convertido</th>
             <th>Moeda de conversão</th>
-            <th>Editar/Excluir</th>
+            <th>Excluir</th>
           </tr>
         </thead>
         <tbody>

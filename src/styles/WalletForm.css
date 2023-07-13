@@ -1,0 +1,46 @@
+.WalletForm {
+    margin-top: 20px;
+  }
+  
+  .WalletForm .input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .WalletForm .input-container input {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .WalletForm .input-container label {
+    margin-top: 5px;
+  }
+  
+  .WalletForm select {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+  }
+  
+  .WalletForm button {
+    padding: 8px 16px;
+    background-color: #f37272;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .WalletForm button:hover {
+    background-color: #dc5252;
+  }
+  
+  .WalletForm .add-expense-button {
+    background-color: #f37272;
+  }
+  
+  .WalletForm .add-expense-button:hover {
+    background-color: #dc5252;
+  }
+  

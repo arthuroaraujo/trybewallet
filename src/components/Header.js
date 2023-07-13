@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import '../styles/Header.css';
 
 class Header extends Component {
   calcTotal = () => {
     const { expenses } = this.props;
-    console.log(expenses);
     const total = expenses.reduce((acc, curr) => {
       const valValue = curr.value;
       const askValue = curr.exchangeRates[curr.currency].ask;
@@ -17,7 +17,7 @@ class Header extends Component {
   render() {
     const { email } = this.props;
     return (
-      <div>
+      <div className="Header">
         <h4
           data-testid="email-field"
         >
