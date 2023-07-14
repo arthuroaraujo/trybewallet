@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "18.x"
+    "node": "16"
   },
   "dependencies": {
     "@redux-devtools/extension": "3.2.2",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "error-ex": "github:Qix-/node-error-ex",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "4.4.0",
