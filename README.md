@@ -65,12 +65,5 @@ Para executar a TrybeWallet localmente, siga as etapas abaixo:
 
 6. Acesse a aplicação em seu navegador através do endereço [http://localhost:3000](http://localhost:3000).
 
-## Próximos Passos
-
-Aqui estão alguns próximos passos que podem ser realizados para melhorar o projeto:
-
-1. **Criação de um botão para editar uma despesa da tabela**: Implementar a funcionalidade de edição de despesas diretamente na tabela, permitindo que os usuários modifiquem os valores ou descrições das transações já registradas.
-
-2. **Estilização do projeto**: Realizar uma estilização mais aprimorada do projeto, tornando-o mais atraente visualmente e melhorando a experiência do usuário. Isso pode incluir o uso de estilos personalizados, melhorias no layout e na organização dos componentes, além de uma paleta de cores mais harmoniosa.
 
 Sinta-se à vontade para explorar essas sugestões e adicionar novos recursos e melhorias à TrybeWallet!
