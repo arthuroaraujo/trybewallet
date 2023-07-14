@@ -48,22 +48,28 @@ class WalletForm extends Component {
       <div className="WalletForm">
         <form onSubmit={ this.handleSubmit }>
           <div className="input-container">
-            <label htmlFor="value">Preço:</label>
-            <input
-              data-testid="value-input"
-              type="number"
-              name="value"
-              value={ value }
-              onChange={ this.handleChange }
-            />
-            <label htmlFor="description">Descrição:</label>
-            <input
-              data-testid="description-input"
-              type="string"
-              name="description"
-              value={ description }
-              onChange={ this.handleChange }
-            />
+            <label htmlFor="value">
+              Preço:
+              <input
+                id="value"
+                data-testid="value-input"
+                type="number"
+                name="value"
+                value={ value }
+                onChange={ this.handleChange }
+              />
+            </label>
+            <label htmlFor="description">
+              Descrição:
+              <input
+                id="description"
+                data-testid="description-input"
+                type="string"
+                name="description"
+                value={ description }
+                onChange={ this.handleChange }
+              />
+            </label>
           </div>
           <select
             data-testid="currency-input"
