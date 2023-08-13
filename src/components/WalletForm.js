@@ -112,7 +112,6 @@ class WalletForm extends Component {
             className="add-expense-button"
           >
             Adicionar despesa
-
           </button>
         </form>
       </div>
