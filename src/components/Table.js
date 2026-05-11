@@ -24,7 +24,7 @@ class Table extends Component {
         <div className="Table-header">
           <div>
             <h2>Historico de despesas</h2>
-            <p>Veja cada lancamento convertido para BRL em tempo real.</p>
+            <p>Veja cada lançamento convertido para BRL em tempo real.</p>
           </div>
         </div>
         <table className="Table">
