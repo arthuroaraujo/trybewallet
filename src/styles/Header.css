@@ -1,18 +1,44 @@
 .Header {
-    background-color: #fce8e8;
-    padding: 10px;
-    border-radius: 20px;
+  display: grid;
+  grid-template-columns: minmax(240px, 1.4fr) repeat(3, minmax(140px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.Header-user,
+.Header-summary-card {
+  padding: 20px 22px;
+  border: 1px solid var(--border-soft);
+  border-radius: 24px;
+  background: var(--bg-surface);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-soft);
+}
+
+.Header h4 {
+  margin: 0;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.2;
+}
+
+.Header-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 940px) {
+  .Header {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  
-  .Header h4 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
+}
+
+@media (max-width: 640px) {
+  .Header {
+    grid-template-columns: 1fr;
   }
-  
-  .Header h4:first-child {
-    margin-bottom: 5px;
-  }
-  
-  
-  
+}

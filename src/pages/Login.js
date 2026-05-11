@@ -34,26 +34,47 @@ class Login extends React.Component {
   };
 
   render() {
-    const { isDisabled } = this.state;
+    const { email, password, isDisabled } = this.state;
     return (
       <div className="Login">
         <div className="Login-container">
-          <form>
-            <input
-              data-testid="email-input"
-              type="text"
-              name="email"
-              onChange={ this.handleChange }
-            />
-            <input
-              data-testid="password-input"
-              type="password"
-              name="password"
-              onChange={ this.handleChange }
-            />
+          <div className="Login-branding">
+            <span className="Login-badge">TrybeWallet</span>
+            <h1>Controle sua vida financeira sem complicacao</h1>
+            <p>
+              Organize gastos, acompanhe conversoes e visualize tudo em um
+              painel mais claro.
+            </p>
+          </div>
+          <form onSubmit={ this.handleClick }>
+            <label htmlFor="email" className="Login-field">
+              <span>Email</span>
+              <input
+                id="email"
+                data-testid="email-input"
+                type="email"
+                name="email"
+                value={ email }
+                placeholder="voce@exemplo.com"
+                autoComplete="email"
+                onChange={ this.handleChange }
+              />
+            </label>
+            <label htmlFor="password" className="Login-field">
+              <span>Senha</span>
+              <input
+                id="password"
+                data-testid="password-input"
+                type="password"
+                name="password"
+                value={ password }
+                placeholder="Minimo de 6 caracteres"
+                autoComplete="current-password"
+                onChange={ this.handleChange }
+              />
+            </label>
             <button
               type="submit"
-              onClick={ this.handleClick }
               disabled={ isDisabled }
             >
               Entrar

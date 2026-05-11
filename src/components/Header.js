@@ -16,26 +16,26 @@ class Header extends Component {
 
   render() {
     const { email } = this.props;
+    const total = this.calcTotal();
+    const { expenses } = this.props;
     return (
       <div className="Header">
-        <h4
-          data-testid="email-field"
-        >
-          {email}
-
-        </h4>
-        <h4
-          data-testid="total-field"
-        >
-          { this.calcTotal() }
-
-        </h4>
-        <h4
-          data-testid="header-currency-field"
-        >
-          BRL
-
-        </h4>
+        <div className="Header-user">
+          <span className="Header-label">Conta ativa</span>
+          <h4 data-testid="email-field">{email}</h4>
+        </div>
+        <div className="Header-summary-card">
+          <span className="Header-label">Total convertido</span>
+          <h4 data-testid="total-field">{total}</h4>
+        </div>
+        <div className="Header-summary-card">
+          <span className="Header-label">Moeda base</span>
+          <h4 data-testid="header-currency-field">BRL</h4>
+        </div>
+        <div className="Header-summary-card">
+          <span className="Header-label">Lancamentos</span>
+          <h4>{expenses.length}</h4>
+        </div>
       </div>
     );
   }

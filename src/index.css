@@ -1,10 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  --bg-main: #f4f7fb;
+  --bg-surface: rgba(255, 255, 255, 0.88);
+  --bg-strong: #ffffff;
+  --text-main: #14213d;
+  --text-soft: #5f6c8d;
+  --primary: #5b5fef;
+  --primary-strong: #474bcf;
+  --accent: #22c55e;
+  --danger: #ef4444;
+  --border-soft: rgba(133, 146, 173, 0.18);
+  --shadow-soft: 0 24px 60px rgba(31, 41, 55, 0.12);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  min-height: 100vh;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(91, 95, 239, 0.18), transparent 32%),
+    radial-gradient(circle at top right, rgba(34, 197, 94, 0.16), transparent 28%),
+    linear-gradient(180deg, #f9fbff 0%, #eef3fb 100%);
+  color: var(--text-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
 }
 
 code {
